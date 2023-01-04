@@ -1,19 +1,19 @@
 class Yatzy:
 
     @staticmethod
-    def chance(d1, d2, d3, d4, d5):
+    def chance(listaDeDados):
         total = 0
-        total += d1
-        total += d2
-        total += d3
-        total += d4
-        total += d5
+        total += listaDeDados[0]
+        total += listaDeDados[1]
+        total += listaDeDados[2]
+        total += listaDeDados[3]
+        total += listaDeDados[4]
         return total
 
     @staticmethod
-    def yatzy(dice):
-        counts = [0]*(len(dice)+1)
-        for die in dice:
+    def yatzy(listaDeDados):
+        counts = [0]*(len(listaDeDados)+1)
+        for die in listaDeDados:
             counts[die-1] += 1
         for i in range(len(counts)):
             if counts[i] == 5:
