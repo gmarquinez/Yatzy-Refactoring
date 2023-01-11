@@ -168,7 +168,7 @@ def test_largeStraight(listaDeDados, resultado):
 @pytest.mark.parametrize(
         "listaDeDados, resultado",
         [
-                ([6,2,2,2,6], 18),
+                ([6,2,2,2,6], 25),
                 ([2,3,4,5,6], 0)
         ]
 )
