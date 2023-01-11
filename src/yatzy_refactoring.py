@@ -16,7 +16,9 @@ class Yatzy:
             if counts[i] == 5:
                 return 50
         return 0
-    
+
+
+       
     @staticmethod
     def ones(listaDeDados):
         sum = 0
@@ -134,27 +136,14 @@ class Yatzy:
 
     @staticmethod
     def fullHouse( listaDeDados):
-        tallies = []
-        _2 = False
-        _2_at = 0
-        _3 = False
-        _3_at = 0
+      listaDeDadosRestantes = []
+      for numero in range(1, 7):
+        if(listaDeDados.count(numero) == 3):
+            listaDeDadosRestantes = [i for i in listaDeDados if i != numero]
 
-        tallies = [0]*6
-        for dice in listaDeDados:
-            tallies[dice-1] += 1
-        for indice in range(6):
-            if (tallies[indice] == 2): 
-                _2 = True
-                _2_at = indice+1
-
-        for indice in range(6):
-            if (tallies[indice] == 3): 
-                _3 = True
-                _3_at = indice+1
-            
-
-        if (_2 and _3):
-            return _2_at * 2 + _3_at * 3
-        else:
-            return 0
+      if(len(listaDeDadosRestantes) == 2):
+        for numero in range(1, 7):
+            if(listaDeDadosRestantes.count(numero) == 2):
+                return 25
+    
+      return 0
